@@ -39,5 +39,5 @@ test("test for the correct work of popupAttacks function", () => {
     },
   ];
 
-  expect(popupAttacks(character)).toBe(result);
+  expect(popupAttacks(character)).toEqual(result);
 });

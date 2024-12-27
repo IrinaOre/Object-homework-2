@@ -23,17 +23,13 @@ const character = {
   ],
 };
 
-export const popupAttacks = function (object) {
-  const specialAttacks = [];
-  for (const attack of character.special) {
-    const { id, name, description, icon } = attack;
-    specialAttacks.push({
-      id,
-      name,
-      description:
-        description !== undefined ? description : "Описание недоступно",
-    });
-  }
-  return specialAttacks;
+export const popupAttacks = (object) => {
+  const { special } = object;
+  special.forEach((item) => {
+    if (!item.description) {
+      item.description = "Описание недоступно";
+    }
+  });
+  return special;
 };
 console.log(popupAttacks(character));
