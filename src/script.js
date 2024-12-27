@@ -23,9 +23,20 @@ const character = {
   ],
 };
 
+// export const popupAttacks = (object) => {
+//   const { special } = object;
+//   special.forEach((item) => {
+//     if (!item.description) {
+//       item.description = "Описание недоступно";
+//     }
+//   });
+//   return special;
+// };
+// console.log(popupAttacks(character));
+
 export const popupAttacks = (object) => {
   const { special } = object;
-  special.forEach((item) => {
+  special.map((item) => {
     if (!item.description) {
       item.description = "Описание недоступно";
     }
